@@ -47,6 +47,8 @@ var blue_end = PIXI.Texture.fromImage("blue_end.png");
 var green_end = PIXI.Texture.fromImage("green_end.png");
 var pink_end = PIXI.Texture.fromImage("pink_end.png");
 var red_end = PIXI.Texture.fromImage("red_end.png");
+var skeletonfriend = PIXI.Texture.fromImage("skeletonfriend.png");
+var tree = PIXI.Texture.fromImage("tree.png");
 
 
 var button1 = new PIXI.Sprite(button1);
@@ -88,6 +90,9 @@ var green_end = new PIXI.Sprite(green_end);
 var pink_end = new PIXI.Sprite(pink_end);
 var red_end = new PIXI.Sprite(red_end);
 
+var skeletonfriend = new PIXI.Sprite(skeletonfriend);
+var tree = new PIXI.Sprite(tree);
+
 
 //placements
 button1.position.x = 60;
@@ -121,7 +126,7 @@ skeleton1.position.x = 350;
 skeleton1.position.y = 350;
 
 witch.position.x = 40;
-witch.position.y = 320;
+witch.position.y = 330;
 
 vampire.position.x = 310;
 vampire.position.y = 20;
@@ -175,6 +180,12 @@ pink_end.y = 0;
 green_end.position.x = 0;
 green_end.y = 0;
 
+skeletonfriend.position.x = 320;
+skeletonfriend.y = 340;
+
+tree.position.x = 100;
+tree.y = 300;
+
 //Add sprites to stage
 stage.addChild(button1);
 stage.addChild(vampire);
@@ -200,6 +211,8 @@ stage.addChild(vampire_text);
 stage.addChild(skeleton_text);
 stage.addChild(witch_text);
 stage.addChild(santa_text);
+stage.addChild(skeletonfriend);
+stage.addChild(tree);
 
 
 //make text invisible at start
@@ -286,7 +299,7 @@ function EventHandler(e) {
     spooky_song.play();
   }
 	//starts the game, makes Title and menu disappear, increases vampire and witch size.
-	if((ghost.position.y == start_button.position.y) && (ghost.position.x == start_button.position.x) && has_started == false){
+	if((ghost.position.y + 20== start_button.position.y) && (ghost.position.x == start_button.position.x) && has_started == false){
 		start.visible = false;
 		start_button.visible = false;
 		credits_button.visible = false;
@@ -296,63 +309,63 @@ function EventHandler(e) {
 		
 	}
 	//shows credits
-	if((ghost.position.y == credits_button.position.y) && (ghost.position.x == credits_button.position.x) && has_started == false){
+	if((ghost.position.y + 20 == credits_button.position.y) && (ghost.position.x == credits_button.position.x) && has_started == false){
 		stage.addChild(credits);		
 	}
 	//displays santa text
-	if((ghost.position.y == button8.position.y) && (ghost.position.x == button8.position.x) && has_started == true){
+	if((ghost.position.y +20 == button8.position.y) && (ghost.position.x == button8.position.x) && has_started == true){
 		santa_text.visible = true;		
 	}
 	//displays pumpkin text
-	if((ghost.position.y == button1.position.y) && (ghost.position.x == button1.position.x) && has_started == true){
+	if((ghost.position.y +20 == button1.position.y) && (ghost.position.x == button1.position.x) && has_started == true){
 		pumpkin_text.visible = true;		
 	}
 	//displays vampire text
-	if((ghost.position.y == button2.position.y) && (ghost.position.x == button2.position.x) && has_started == true){
+	if((ghost.position.y + 20== button2.position.y) && (ghost.position.x == button2.position.x) && has_started == true){
 		vampire_text.visible = true;	
 	}
 	//displays witch text
-	if((ghost.position.y == button3.position.y) && (ghost.position.x == button3.position.x) && has_started == true){
+	if((ghost.position.y +20 == button3.position.y) && (ghost.position.x == button3.position.x) && has_started == true){
 		witch_text.visible = true;		
 	}
 	//displays skeleton1 text
-	if((ghost.position.y == button4.position.y) && (ghost.position.x == button4.position.x) && has_started == true){
+	if((ghost.position.y +20 == button4.position.y) && (ghost.position.x == button4.position.x) && has_started == true){
 		skeleton_text.visible = true;		
 	}
 	//Displays ending when choosing blue candy
-	if((ghost.position.y == candyBlue.position.y) && (ghost.position.x == candyBlue.position.x) && has_started == true){
+	if((ghost.position.y +20== candyBlue.position.y) && (ghost.position.x == candyBlue.position.x) && has_started == true){
 		stage.addChild(blue_end);		
 	}
 	//Displays ending when choosing green candy
-	if((ghost.position.y == candyGreen.position.y) && (ghost.position.x == candyGreen.x) && has_started == true){
+	if((ghost.position.y +20== candyGreen.position.y) && (ghost.position.x == candyGreen.x) && has_started == true){
 		stage.addChild(green_end);
 	}
 	//displays ending when choosing pink candy
-	if((ghost.position.y == candyPink.position.y) && (ghost.position.x == candyPink.position.x) && has_started == true){
+	if((ghost.position.y +20== candyPink.position.y) && (ghost.position.x == candyPink.position.x) && has_started == true){
 		stage.addChild(pink_end);	
 	}
 	//displays ending when choosing red candy
-	if((ghost.position.y == candyRed.position.y) && (ghost.position.x == candyRed.position.x) && has_started == true){
+	if((ghost.position.y +20 == candyRed.position.y) && (ghost.position.x == candyRed.position.x) && has_started == true){
 		stage.addChild(red_end);		
 	}
 	//makes santa text disappear when not standing on button
-	if(!(ghost.position.y == button8.position.y) || !(ghost.position.x == button8.position.x)){
+	if(!(ghost.position.y +20== button8.position.y) || !(ghost.position.x == button8.position.x)){
 		santa_text.visible = false;		
 	}
 	//makes pumpkin text disappear when not standing on button
-	if(!(ghost.position.y == button1.position.y) || !(ghost.position.x == button1.position.x)){
+	if(!(ghost.position.y +20== button1.position.y) || !(ghost.position.x == button1.position.x)){
 		pumpkin_text.visible = false;	
 	}
 	//makes vampire text disappear when not standing on button
-	if(!(ghost.position.y == button2.position.y) || !(ghost.position.x == button2.position.x)){
+	if(!(ghost.position.y +20 == button2.position.y) || !(ghost.position.x == button2.position.x)){
 		vampire_text.visible = false;		
 	}
 	//makes witch text disappear when not standing on button
-	if(!(ghost.position.y == button3.position.y) || !(ghost.position.x == button3.position.x)){
+	if(!(ghost.position.y +20 == button3.position.y) || !(ghost.position.x == button3.position.x)){
 		witch_text.visible = false;		
 	}
 	//makes skeleton1 text disappear when not standing on button
-	if(!(ghost.position.y == button4.position.y) || !(ghost.position.x == button4.position.x)){
+	if(!(ghost.position.y +20 == button4.position.y) || !(ghost.position.x == button4.position.x)){
 		skeleton_text.visible = false;
 		
 	}
