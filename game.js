@@ -51,8 +51,17 @@ var pink_end = PIXI.Texture.fromImage("pink_end.png");
 var red_end = PIXI.Texture.fromImage("red_end.png");
 var skeletonfriend = PIXI.Texture.fromImage("skeletonfriend.png");
 var tree = PIXI.Texture.fromImage("tree.png");
+var snow = PIXI.Texture.fromImage("snow.png");
+var snow1 = PIXI.Texture.fromImage("snow.png");
+var snow2 = PIXI.Texture.fromImage("snow.png");
+var snow3 = PIXI.Texture.fromImage("snow.png");
+var snow4 = PIXI.Texture.fromImage("snow.png");
 
-
+var snow = new PIXI.Sprite(snow);
+var snow1 = new PIXI.Sprite(snow1);
+var snow2 = new PIXI.Sprite(snow2);
+var snow3 = new PIXI.Sprite(snow3);
+var snow4 = new PIXI.Sprite(snow4);
 var button1 = new PIXI.Sprite(button1);
 var button2 = new PIXI.Sprite(button2);
 var button3 = new PIXI.Sprite(button3);
@@ -97,6 +106,22 @@ var tree = new PIXI.Sprite(tree);
 
 
 //placements
+
+snow.position.x = 60;
+snow.position.y = 0;
+
+snow1.position.x = 120;
+snow1.position.y = 0;
+
+snow2.position.x = 180;
+snow2.position.y = 0;
+
+snow3.position.x = 240;
+snow3.position.y = 0;
+
+snow4.position.x = 300;
+snow4.position.y = 0;
+
 button1.position.x = 60;
 button1.position.y = 70;
 
@@ -189,6 +214,11 @@ tree.position.x = 100;
 tree.y = 300;
 
 //Add sprites to stage
+stage.addChild(snow);
+stage.addChild(snow1);
+stage.addChild(snow2);
+stage.addChild(snow3);
+stage.addChild(snow4);
 stage.addChild(skeletonfriend);
 stage.addChild(tree);
 stage.addChild(button1);
@@ -215,6 +245,7 @@ stage.addChild(vampire_text);
 stage.addChild(skeleton_text);
 stage.addChild(witch_text);
 stage.addChild(santa_text);
+
 
 
 //make text invisible at start
@@ -283,21 +314,66 @@ function EventHandler(e) {
 
   if (e.keyCode == 87) { // W key
     ghost.position.y -= 10;
+	snow.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow1.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow1.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow2.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow2.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow3.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow3.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow4.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow4.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	
+	//var snow = new PIXI.Sprite(snow); 
+		//stage.addChild(snow);
+		
     spooky_song.play();
   }
 
   if (e.keyCode == 83) { // S key
     ghost.position.y += 10;
+	snow.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow1.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow1.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow2.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow2.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow3.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow3.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow4.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow4.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
     spooky_song.play();
   }
 
   if (e.keyCode == 65) { // A key
     ghost.position.x -= 10;
+	snow.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow1.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow1.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow2.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow2.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow3.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow3.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow4.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow4.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
     spooky_song.play();
   }
 
   if (e.keyCode == 68) { // D key
     ghost.position.x += 10;
+	snow.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow1.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow1.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow2.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow2.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow3.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow3.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow4.position.x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	snow4.position.y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+	
     spooky_song.play();
   }
 	//starts the game, makes Title and menu disappear, increases vampire and witch size.
@@ -376,7 +452,31 @@ function EventHandler(e) {
 		skeleton_text.visible = false;
 		
 	}
+	/*
+	if((snow.position.y == 60) && (snow.position.x == 400) && has_started == true){
+		var snow = new PIXI.Sprite(snow); 
+		stage.addChild(snow);
+		snow.position.x = 60;
+		snow.position.y = 60;
+	}
+	if((snow1.position.y == 120) && (snow1.position.x == 400) && has_started == true){
+		snow1.position.x = 120;
+		snow1.position.y = 0;
+	}
+	if((snow2.position.y == 180) && (snow2.position.x == 400) && has_started == true){
+		snow2.position.x = 180;
+		snow2.position.y = 200;
+	}
+	if((snow3.position.y +20 == 240) && (snow3.position.x == 400) && has_started == true){
+		snow3.position.x = 240;
+		snow3.position.y = 0;
+	}
+	if((snow4.position.y +20 == 300) && (snow4.position.x == 400) && has_started == true){
+		snow4.position.x = 300;
+		snow4.position.y = 40;
+	}*/
 }
+
 
 //makes ghost run to a random location, uses tweening
 function mouseHandler(e) {
@@ -390,6 +490,16 @@ ghost.on('mousedown', mouseHandler);
 
 
 document.addEventListener('keydown', EventHandler);
+
+//makes ghost run to a random location, uses tweening
+function mouseHandler(e) {
+  var new_x = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+  var new_y = Math.round(Math.floor(Math.random() * 380) /10) * 10;
+  createjs.Tween.get(ghost.position).to({x: new_x, y: new_y}, 1000, createjs.Ease.bounceOut);
+}
+
+ghost.interactive = true;
+ghost.on('mousedown', mouseHandler);
 
 function animate() {
 	requestAnimationFrame(animate);
