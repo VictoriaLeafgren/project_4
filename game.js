@@ -6,6 +6,8 @@ gameport.appendChild(renderer.view);
 var stage = new PIXI.Container();
 //var world
 
+var talked_to = 0;
+
 //Create all of the sprites
 var button1 = PIXI.Texture.fromImage("button.png");
 var button2 = PIXI.Texture.fromImage("button.png");
@@ -132,11 +134,11 @@ vampire.position.x = 310;
 vampire.position.y = 20;
 
 pumpkin.position.x = 60;
-pumpkin.position.y = 30;
+pumpkin.position.y = 20;
 
 
-santa.position.x = 200;
-santa.position.y = 200;
+santa.position.x = 195;
+santa.position.y = 190;
 
 candyBlue.position.x = 130;
 candyBlue.position.y = 150;
@@ -187,6 +189,8 @@ tree.position.x = 100;
 tree.y = 300;
 
 //Add sprites to stage
+stage.addChild(skeletonfriend);
+stage.addChild(tree);
 stage.addChild(button1);
 stage.addChild(vampire);
 stage.addChild(witch);
@@ -211,8 +215,6 @@ stage.addChild(vampire_text);
 stage.addChild(skeleton_text);
 stage.addChild(witch_text);
 stage.addChild(santa_text);
-stage.addChild(skeletonfriend);
-stage.addChild(tree);
 
 
 //make text invisible at start
@@ -314,38 +316,43 @@ function EventHandler(e) {
 	}
 	//displays santa text
 	if((ghost.position.y +20 == button8.position.y) && (ghost.position.x == button8.position.x) && has_started == true){
-		santa_text.visible = true;		
+		santa_text.visible = true;	
+		talked_to +=1;
 	}
 	//displays pumpkin text
 	if((ghost.position.y +20 == button1.position.y) && (ghost.position.x == button1.position.x) && has_started == true){
-		pumpkin_text.visible = true;		
+		pumpkin_text.visible = true;	
+		talked_to +=1;
 	}
 	//displays vampire text
 	if((ghost.position.y + 20== button2.position.y) && (ghost.position.x == button2.position.x) && has_started == true){
-		vampire_text.visible = true;	
+		vampire_text.visible = true;
+		talked_to +=1;
 	}
 	//displays witch text
 	if((ghost.position.y +20 == button3.position.y) && (ghost.position.x == button3.position.x) && has_started == true){
-		witch_text.visible = true;		
+		witch_text.visible = true;
+		talked_to +=1;
 	}
 	//displays skeleton1 text
 	if((ghost.position.y +20 == button4.position.y) && (ghost.position.x == button4.position.x) && has_started == true){
-		skeleton_text.visible = true;		
+		skeleton_text.visible = true;
+		talked_to +=1;
 	}
 	//Displays ending when choosing blue candy
-	if((ghost.position.y +20== candyBlue.position.y) && (ghost.position.x == candyBlue.position.x) && has_started == true){
+	if((ghost.position.y +20== candyBlue.position.y) && (ghost.position.x == candyBlue.position.x) && has_started == true && talked_to >= 5){
 		stage.addChild(blue_end);		
 	}
 	//Displays ending when choosing green candy
-	if((ghost.position.y +20== candyGreen.position.y) && (ghost.position.x == candyGreen.x) && has_started == true){
+	if((ghost.position.y +20== candyGreen.position.y) && (ghost.position.x == candyGreen.x) && has_started == true && talked_to >= 5){
 		stage.addChild(green_end);
 	}
 	//displays ending when choosing pink candy
-	if((ghost.position.y +20== candyPink.position.y) && (ghost.position.x == candyPink.position.x) && has_started == true){
+	if((ghost.position.y +20== candyPink.position.y) && (ghost.position.x == candyPink.position.x) && has_started == true && talked_to >= 5){
 		stage.addChild(pink_end);	
 	}
 	//displays ending when choosing red candy
-	if((ghost.position.y +20 == candyRed.position.y) && (ghost.position.x == candyRed.position.x) && has_started == true){
+	if((ghost.position.y +20 == candyRed.position.y) && (ghost.position.x == candyRed.position.x) && has_started == true && talked_to >= 5){
 		stage.addChild(red_end);		
 	}
 	//makes santa text disappear when not standing on button
