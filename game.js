@@ -56,6 +56,7 @@ var snow1 = PIXI.Texture.fromImage("snow.png");
 var snow2 = PIXI.Texture.fromImage("snow.png");
 var snow3 = PIXI.Texture.fromImage("snow.png");
 var snow4 = PIXI.Texture.fromImage("snow.png");
+var town = PIXI.Texture.fromImage("town.png");
 
 var snow = new PIXI.Sprite(snow);
 var snow1 = new PIXI.Sprite(snow1);
@@ -74,6 +75,7 @@ var pumpkin1 = new PIXI.Sprite(pumpkin1);
 var pumpkin2 = new PIXI.Sprite(pumpkin2);
 var pumpkin3 = new PIXI.Sprite(pumpkin3);
 var pumpkin4 = new PIXI.Sprite(pumpkin4);
+var town = new PIXI.Sprite(town);
 
 var vampire = new PIXI.Sprite(vampire);
 var witch = new PIXI.Sprite(witch);
@@ -106,6 +108,9 @@ var tree = new PIXI.Sprite(tree);
 
 
 //placements
+
+snow.position.x = 60;
+snow.position.y = 0;
 
 snow.position.x = 60;
 snow.position.y = 0;
@@ -214,6 +219,7 @@ tree.position.x = 100;
 tree.y = 300;
 
 //Add sprites to stage
+stage.addChild(town);
 stage.addChild(snow);
 stage.addChild(snow1);
 stage.addChild(snow2);
